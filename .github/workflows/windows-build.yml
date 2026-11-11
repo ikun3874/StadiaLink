@@ -26,8 +26,9 @@ jobs:
         run: |
           ./tests/localization.ps1
           $result = Join-Path $env:RUNNER_TEMP 'setup-localization'
-          ./release/StadiaLink.Setup.exe /languages-test $result
-          if (($null -ne $LASTEXITCODE -and $LASTEXITCODE -ne 0) -or -not (Test-Path (Join-Path $result 'result.txt'))) { throw 'Installer language tests failed.' }
+          $process = Start-Process -FilePath (Join-Path $PWD 'release/StadiaLink.Setup.exe') -ArgumentList @('/languages-test', ('"' + $result + '"')) -PassThru -Wait -WindowStyle Hidden
+          if ($process.ExitCode -ne 0 -or -not (Test-Path (Join-Path $result 'result.txt'))) { throw 'Installer language tests failed.' }
+          Get-Content (Join-Path $result 'result.txt')
       - name: Upload installers, driver and checksums
         uses: actions/upload-artifact@v4
         with:
