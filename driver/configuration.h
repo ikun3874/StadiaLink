@@ -47,15 +47,30 @@ static uint8_t StadiaMotor(uint8_t input,uint8_t gain) {
     return (uint8_t)(value>255?255:value);
 }
 static void StadiaPut16(uint8_t* out,int value) {out[0]=(uint8_t)value;out[1]=(uint8_t)(value>>8);}
-static int StadiaAxis(uint8_t raw,int deadzone,int sensitivity,int invert) {
-    int value=((raw<1?1:raw)-128)*258;
-    int magnitude=value<0?-value:value;int dz=32766*deadzone/100;
-    if(magnitude<=dz) return 32768;
-    magnitude=(magnitude-dz)*32766/(32766-dz);
-    magnitude=magnitude*sensitivity/100;
-    if(magnitude>32766) magnitude=32766;
-    if(value<0) magnitude=-magnitude;if(invert) magnitude=-magnitude;
-    return 32768+magnitude;
+static uint32_t StadiaSqrt(uint32_t n) {
+    uint32_t x=0,bit=1u<<30;
+    while(bit>n)bit>>=2;
+    while(bit){if(n>=x+bit){n-=x+bit;x=(x>>1)+bit;}else x>>=1;bit>>=2;}
+    return x;
+}
+static void StadiaStick(uint8_t rawX,uint8_t rawY,int deadzone,int sensitivity,int invertX,int invertY,int* outX,int* outY) {
+    int x=((rawX<1?1:rawX)-128)*258,y=((rawY<1?1:rawY)-128)*258;
+    int ax=x<0?-x:x,ay=y<0?-y:y,major=ax>ay?ax:ay;
+    uint32_t radius=StadiaSqrt((uint32_t)(ax*ax+ay*ay));
+    int dz=15*258+32766*deadzone*128/12700;
+    if((int)radius<=dz){x=0;y=0;}
+    else {
+        int maxRadius=(int)((int64_t)radius*32766/major);
+        int64_t numerator=(int64_t)(radius-dz)*maxRadius;
+        int64_t denominator=(int64_t)radius*(maxRadius-dz);
+        x=(int)((int64_t)x*numerator/denominator);
+        y=(int)((int64_t)y*numerator/denominator);
+    }
+    x=x*sensitivity/100;y=y*sensitivity/100;
+    if(x>32766)x=32766;if(x< -32766)x=-32766;
+    if(y>32766)y=32766;if(y< -32766)y=-32766;
+    if(invertX)x=-x;if(invertY)y=-y;
+    *outX=32768+x;*outY=32768+y;
 }
 static int StadiaTrigger(uint8_t raw,int deadzone) {
     int dz=255*deadzone/100;
@@ -65,8 +80,10 @@ static void StadiaTranslate(const uint8_t* raw,const STADIA_CONFIG* c,uint8_t* o
     memset(out,0,16);
     for(int i=0;i<4;i++) {
         int source=(c->Flags&16)?(i+2)%4:i;
-        StadiaPut16(out+2*i,StadiaAxis(raw[4+source],i<2?c->LeftDeadzone:c->RightDeadzone,
-            i<2?c->LeftSensitivity:c->RightSensitivity,(c->Flags&(1<<i))!=0));
+        if(i==0 || i==2){int x,y,deadzone=i==0?c->LeftDeadzone:c->RightDeadzone,sensitivity=i==0?c->LeftSensitivity:c->RightSensitivity;
+            StadiaStick(raw[4+source],raw[5+source],deadzone,sensitivity,(c->Flags&(1<<i))!=0,(c->Flags&(1<<(i+1)))!=0,&x,&y);
+            StadiaPut16(out+2*i,x);StadiaPut16(out+2*(i+1),y);
+        }
     }
     int lt=StadiaTrigger(raw[8],c->TriggerDeadzone),rt=StadiaTrigger(raw[9],c->TriggerDeadzone);
     if(c->Flags&32) {int temp=lt;lt=rt;rt=temp;}

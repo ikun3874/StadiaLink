@@ -2,10 +2,10 @@
   <img src="app/assets/readme-logo.svg" width="112" height="112" alt="StadiaLink logo">
   <h1>StadiaLink</h1>
   <p><strong>Tu Stadia. A tu manera.</strong></p>
-  <p>Configuración del mando Stadia para Windows 11 x64 · Versión 1.0.3</p>
+  <p>Configuración del mando Stadia para Windows 11 x64 · Versión 1.3.0</p>
   <p><a href="https://github.com/minysito/StadiaLink/releases/latest"><strong>⬇ Descargar</strong></a> · <a href="https://github.com/minysito/StadiaLink/issues">Comunicar un problema</a> · <a href="LICENSE">GPL-3.0</a></p>
   <p>🪟 Windows 11 x64 &nbsp; · &nbsp; 🎮 XInput &nbsp; · &nbsp; 🔗 USB + Bluetooth</p>
-  <p><strong><img src="app/assets/flag-es.svg" width="24" height="16" alt="ES"> Español</strong> &nbsp; | &nbsp; <a href="README.en.md"><img src="app/assets/flag-en.svg" width="24" height="16" alt="EN"> English</a> &nbsp; | &nbsp; <a href="README.fr.md"><img src="app/assets/flag-fr.svg" width="24" height="16" alt="FR"> Français</a> &nbsp; | &nbsp; <a href="README.de.md"><img src="app/assets/flag-de.svg" width="24" height="16" alt="DE"> Deutsch</a></p>
+  <p><strong><img src="app/assets/flag-es.svg" width="24" height="16" alt="ES"> Español</strong> &nbsp; | &nbsp; <a href="README.en.md"><img src="app/assets/flag-en.svg" width="24" height="16" alt="EN"> English</a> &nbsp; | &nbsp; <a href="README.fr.md"><img src="app/assets/flag-fr.svg" width="24" height="16" alt="FR"> Français</a> &nbsp; | &nbsp; <a href="README.de.md"><img src="app/assets/flag-de.svg" width="24" height="16" alt="DE"> Deutsch</a> &nbsp; | &nbsp; <a href="README.zh-CN.md">简体中文</a></p>
 </div>
 
 ---
@@ -18,7 +18,7 @@
 - Vibración por motor y prueba continua con parada manual.
 - Perfiles importables y exportables.
 - Batería, avisos, bandeja e inicio con Windows.
-- Español, inglés, francés y alemán.
+- Español, inglés, francés, alemán y chino simplificado.
 
 ## 🚀 Instalación
 

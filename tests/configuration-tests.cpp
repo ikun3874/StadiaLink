@@ -17,16 +17,23 @@ int main() {
     c.Flags=32;raw[8]=255;raw[9]=0;StadiaTranslate(raw,&c,out);Assert(Read16(out+8)==0 && Read16(out+10)==1023,"swap triggers");
     StadiaConfigDefault(&c);raw[8]=raw[9]=0;raw[1]=1;StadiaTranslate(raw,&c,out);Assert(out[12]==2,"diagonal dpad");raw[1]=8;
     c.Map[0]=14;c.Map[1]=15;raw[3]=64|32;StadiaTranslate(raw,&c,out);Assert(out[12]==0,"opposite dpad cancellation");raw[3]=0;
-    // Exhaustive axis bounds, monotonicity and inversion across the supported
-    // settings range, including full deflection and an exact center.
+    // Exhaustive stick bounds, monotonicity and inversion across the supported
+    // settings range, including the measured 15-count onset and full deflection.
     for(int dz=0;dz<=40;dz++)for(int sens=50;sens<=200;sens++) {
         int previous=0;
         for(int r=0;r<=255;r++) {
-            int v=StadiaAxis((uint8_t)r,dz,sens,0),inv=StadiaAxis((uint8_t)r,dz,sens,1);
-            Assert(v>=2 && v<=65534,"axis bounds");Assert(v>=previous,"axis monotonic");Assert(v+inv==65536,"axis inversion symmetry");previous=v;
+            int x,y,ix,iy;StadiaStick((uint8_t)r,128,dz,sens,0,0,&x,&y);StadiaStick((uint8_t)r,128,dz,sens,1,0,&ix,&iy);
+            Assert(x>=2 && x<=65534,"axis bounds");Assert(x>=previous,"axis monotonic");Assert(x+ix==65536,"axis inversion symmetry");previous=x;
         }
-        Assert(StadiaAxis(128,dz,sens,0)==32768,"axis exact center");
+        int x,y;StadiaStick(128,128,dz,sens,0,0,&x,&y);Assert(x==32768&&y==32768,"stick exact center");
     }
+    int x,y;
+    StadiaStick(113,128,0,100,0,0,&x,&y);Assert(x==32768&&y==32768,"zero additional deadzone compensates negative 15-count onset");
+    StadiaStick(143,128,0,100,0,0,&x,&y);Assert(x==32768&&y==32768,"zero additional deadzone compensates positive 15-count onset");
+    StadiaStick(112,128,1,100,0,0,&x,&y);Assert(x==32768&&y==32768,"one-percent deadzone adds to the measured onset");
+    StadiaStick(111,128,0,100,0,0,&x,&y);Assert(x<32768&&y==32768,"travel resumes smoothly after measured onset");
+    StadiaStick(128,113,0,100,0,0,&x,&y);Assert(x==32768&&y==32768,"measured onset compensation applies to Y axis");
+    StadiaStick(117,117,0,100,0,0,&x,&y);Assert(x<32768&&y<32768,"diagonal travel outside radial threshold is not trapped by square threshold");
     c.LeftSensitivity=0;c.Checksum=StadiaConfigChecksum(&c);Assert(!StadiaConfigValid(&c),"reject zero sensitivity");
     StadiaConfigDefault(&c);c.Map[0]=255;c.Checksum=StadiaConfigChecksum(&c);Assert(!StadiaConfigValid(&c),"reject invalid destination");
     StadiaConfigDefault(&c);c.Checksum^=1;Assert(!StadiaConfigValid(&c),"reject corrupt report");

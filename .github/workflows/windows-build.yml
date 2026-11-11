@@ -21,6 +21,13 @@ jobs:
       - name: Run configuration and application tests
         shell: powershell
         run: ./tests/run.ps1
+      - name: Run localization and installer language tests
+        shell: powershell
+        run: |
+          ./tests/localization.ps1
+          $result = Join-Path $env:RUNNER_TEMP 'setup-localization'
+          ./release/StadiaLink.Setup.exe /languages-test $result
+          if (($null -ne $LASTEXITCODE -and $LASTEXITCODE -ne 0) -or -not (Test-Path (Join-Path $result 'result.txt'))) { throw 'Installer language tests failed.' }
       - name: Upload installers, driver and checksums
         uses: actions/upload-artifact@v4
         with:

@@ -1,0 +1,287 @@
+Mando|手柄
+Sticks y gatillos|摇杆与扳机
+Vibración|振动
+Perfiles|配置文件
+Aplicación|应用
+Idioma|语言
+Guardar y aplicar|保存并应用
+Los cambios se descartan al cambiar de pestaña.|切换选项卡时将放弃未保存的更改。
+Configuración del mando|手柄设置
+Buscando tu Stadia…|正在查找 Stadia 手柄…
+Buscando mando|正在查找手柄
+Sin conexión|未连接
+●  MANDO CONECTADO|●  手柄已连接
+○  SIN CONEXIÓN|○  未连接
+●  BUSCANDO|●  正在查找
+Enciende tu Stadia|请开启 Stadia 手柄
+Conectado por USB|已通过 USB 连接
+Batería: |电量：
+Batería: —|电量：—
+Batería: no disponible|电量：不可用
+Asignación|按键映射
+Selecciona un botón y su función.|选择一个按键及其功能。
+Botón físico|实体按键
+Función|功能
+Pulsa un botón del dibujo para cambiar su función.|点击图示中的按键即可更改其功能。
+Gatillo izquierdo|左扳机
+Gatillo derecho|右扳机
+StadiaLink debe estar abierto para las acciones de Windows.|执行 Windows 操作时需要保持 StadiaLink 运行。
+Los controles Xbox siguen activos al cerrar la app.|关闭应用后，Xbox 映射仍会生效。
+Probar vibración|测试振动
+Restaurar este perfil|重置此配置文件
+Cambios sin aplicar|更改尚未应用
+Sin cambios|没有更改
+Puedes repetir una función en varios botones o dejar una entrada sin asignar.|可以将同一功能分配给多个按键，也可以不分配某项输入。
+Al asignarlo a un botón, se activa al superar el umbral de gatillo configurado.|映射为按键后，扳机输入超过设定阈值时会触发。
+Recorrido analógico|模拟行程
+Gatillos|扳机
+Ajusta dónde empieza el recorrido y cuándo se convierte en una pulsación de botón.|设置行程的起点，以及何时触发按键。
+Zona muerta de gatillos|扳机死区
+Umbral para botones reasignados|重映射按键的触发阈值
+Intercambiar gatillos izquierdo y derecho|交换左右扳机
+Intercambiar sticks izquierdo y derecho|交换左右摇杆
+Stick izquierdo|左摇杆
+Stick derecho|右摇杆
+La zona muerta elimina movimientos involuntarios cerca del centro.|死区可过滤中心附近的意外移动。
+Zona muerta adicional|附加死区
+Sensibilidad|灵敏度
+Invertir eje horizontal|反转水平轴
+Invertir eje vertical|反转垂直轴
+Respuesta háptica|触觉反馈
+Ajusta por separado los dos motores del Stadia. Las pruebas se detienen automáticamente.|分别调整 Stadia 手柄的两个马达。测试会自动停止。
+Motor izquierdo|左侧马达
+Motor derecho|右侧马达
+Motor fuerte|强振马达
+Motor suave|轻振马达
+Intensidad|强度
+Probar motor izquierdo|测试左侧马达
+Probar motor derecho|测试右侧马达
+Probar ambos motores|测试两个马达
+Detener vibración|停止振动
+Conecta el mando para probar la vibración.|连接手柄以测试振动。
+El canal Bluetooth no está disponible. Reconecta el mando.|蓝牙通道不可用。请重新连接手柄。
+El último envío no se completó. Reconecta el mando y vuelve a probar.|上次发送未完成。请重新连接手柄并重试。
+Canal de vibración disponible · |振动通道可用 · 
+ envíos confirmados · | 次发送已确认 · 
+ paradas.| 次停止。
+Guarda tus ajustes, duplica un perfil y compártelo en un archivo JSON.|保存设置、复制配置文件，并以 JSON 文件分享。
++ Nuevo perfil|+ 新建配置文件
+Importar perfil|导入配置文件
+Perfil seleccionado|已选配置文件
+Nombre|名称
+Los cambios del perfil se guardan con Guardar y aplicar.|点击“保存并应用”以保存配置文件更改。
+Duplicar|复制
+Exportar JSON|导出 JSON
+Eliminar perfil|删除配置文件
+Cada perfil incluye botones, sticks, gatillos y vibración.|每个配置文件都包含按键、摇杆、扳机和振动设置。
+Perfil|配置文件
+Perfil activo|当前配置文件
+Atajos|快捷键
+Voz y accesos rápidos|语音与快捷操作
+Elige la misma tecla en StadiaLink y en el juego o en los atajos de Discord. Guarda y aplica para activarla.|在 StadiaLink、游戏或 Discord 快捷键中选择相同按键。保存并应用后即可启用。
+Pulsar para hablar · Asistente|按键通话 · 助手键
+Silenciar / activar micrófono · Captura|静音/取消静音 · 截图键
+Atajo adicional · Stadia|附加快捷键 · Stadia 键
+Preferencias|偏好设置
+Inicio y avisos|启动与通知
+Abrir StadiaLink al iniciar Windows, en la bandeja|Windows 启动时在系统托盘中打开 StadiaLink
+Avisos de conexión y batería|连接与电量通知
+Batería baja: 15 % o menos. Nivel máximo: 100 %.|电量低：15% 或更低。电量充足：100%。
+Conexión|连接
+Tu dispositivo|你的设备
+Enciende el Stadia y emparéjalo desde los ajustes Bluetooth de Windows.|开启 Stadia 手柄，并在 Windows 蓝牙设置中配对。
+Mando detectado. Instala el controlador incluido para activar la configuración.|已检测到手柄。安装附带的驱动程序以启用设置功能。
+Mando detectado · |已检测到手柄 · 
+ · Configuración compatible.| · 支持配置。
+Abrir ajustes Bluetooth|打开蓝牙设置
+Volver a detectar|重新检测
+Reparar controlador|修复驱动程序
+Archivos|文件
+Los perfiles se guardan en esta cuenta de Windows.|配置文件保存在此 Windows 帐户中。
+Abrir carpeta de perfiles|打开配置文件文件夹
+Configura esta misma combinación en el juego o en Discord.|在游戏或 Discord 中设置相同的按键组合。
+Mantener la tecla mientras pulso el botón|按住按键时保持此键
+Marcado: pulsar para hablar. Desmarcado: atajo para alternar el silencio del micrófono o cualquier otra acción.|勾选：按键通话。取消勾选：切换麦克风静音或执行其他快捷操作。
+Actualizar borrador|更新草稿
+Configurar atajo|设置快捷键
+Opciones|选项键
+Menú|菜单键
+Captura|截图键
+Asistente|助手键
+Cruceta|方向键
+Sin asignar|未分配
+LS · pulsación|LS · 按下
+RS · pulsación|RS · 按下
+Xbox · guía|Xbox · 指南键
+Control del mando|手柄控制
+Subir volumen|提高音量
+Bajar volumen|降低音量
+Silenciar audio|静音
+Reproducir / pausar|播放/暂停
+Pista siguiente|下一首
+Pista anterior|上一首
+Recorte de pantalla|屏幕截图
+Mostrar escritorio|显示桌面
+Cambiar de ventana|切换窗口
+Atrás|后退
+Adelante|前进
+Tecla mantenida / pulsar para hablar|按住按键/按键通话
+Atajo al pulsar|按下时执行快捷操作
+Espacio|空格
+Retroceso|退格
+Abrir StadiaLink|打开 StadiaLink
+Salir|退出
+Mando desconectado|手柄已断开
+StadiaLink · sin mando|StadiaLink · 未连接手柄
+StadiaLink · batería no disponible|StadiaLink · 电量不可用
+Stadia conectado|Stadia 手柄已连接
+Stadia desconectado|Stadia 手柄已断开
+El mando está listo para usar.|手柄已就绪。
+Se ha perdido la conexión con el mando.|手柄连接已断开。
+Batería baja|电量低
+ % de batería. Conecta el mando por USB para cargarlo.|% 电量。请通过 USB 连接手柄进行充电。
+Batería al 100 %|电量已达 100%
+El mando ha alcanzado el nivel máximo de batería.|手柄电量已充满。
+Cambios descartados.|已放弃更改。
+Cambios pendientes · Guarda para aplicarlos al mando.|有待处理的更改 · 保存后应用到手柄。
+Perfil abierto. Pulsa Guardar y aplicar para activarlo en el mando.|配置文件已打开。点击“保存并应用”以启用。
+Perfil guardado y aplicado.|配置文件已保存并应用。
+Perfil guardado. Se aplicará cuando conectes el mando con StadiaLink abierto.|配置文件已保存。连接手柄且 StadiaLink 正在运行时将自动应用。
+Aplicado al mando|已应用到手柄
+Guardado · pendiente de conexión|已保存 · 等待连接
+Prueba enviada. Ajustes sin guardar.|测试已发送。设置尚未保存。
+Orden de parada enviada.|停止命令已发送。
+Stadia detectado. Listo para configurar.|已检测到 Stadia 手柄，可以开始设置。
+Perfil aplicado.|配置文件已应用。
+Perfil exportado.|配置文件已导出。
+Perfil creado. Guárdalo y aplícalo cuando esté listo.|配置文件已创建。准备就绪后保存并应用。
+Ya existe un perfil con ese nombre.|已存在同名配置文件。
+Instala el controlador incluido para configurar el mando.|安装附带的驱动程序以配置手柄。
+Instala el controlador incluido para usar las pruebas.|安装附带的驱动程序以使用测试功能。
+Actualiza el controlador incluido para probar ajustes sin guardarlos.|更新附带的驱动程序，以预览尚未保存的设置。
+Versión|版本
+Nuevo perfil|新配置文件
+Copia de perfil|配置文件副本
+ · copia| · 副本
+¿Eliminar el perfil «|确定删除配置文件“
+La biblioteca admite hasta 100 perfiles.|配置文件库最多支持 100 个配置文件。
+No se pudo cargar la biblioteca: |无法加载配置文件库：
+Acción no válida.|操作无效。
+Tecla no válida.|按键无效。
+El perfil contiene valores no válidos.|配置文件包含无效值。
+Perfil vacío.|配置文件为空。
+Biblioteca no válida.|配置文件库无效。
+Hay nombres de perfil duplicados.|配置文件名称重复。
+La biblioteca de perfiles es demasiado grande.|配置文件库过大。
+El archivo de perfil es demasiado grande.|配置文件过大。
+La acción de Windows requiere una entrada sin asignación Xbox y una tecla válida.|Windows 操作需要使用未映射到 Xbox 功能的输入，并指定有效按键。
+El controlador no ha confirmado la configuración.|驱动程序尚未确认此配置。
+Actualiza el controlador para configurar el mando.|更新驱动程序以配置手柄。
+Respuesta de configuración no válida.|配置响应无效。
+Archivo demasiado grande.|文件过大。
+Windows no ha aceptado el atajo.|Windows 未接受此快捷键。
+Abre el instalador de StadiaLink para instalar el controlador.|打开 StadiaLink 安装程序以安装驱动程序。
+Controlador instalado. Si Windows lo pide, reconecta el mando o reinicia el equipo.|驱动程序已安装。如果 Windows 提示，请重新连接手柄或重启电脑。
+Todo preparado para instalar.|已准备就绪，可以安装。
+Instalar StadiaLink|安装 StadiaLink
+Desinstalar StadiaLink|卸载 StadiaLink
+Retirar también el controlador del mando|同时移除手柄驱动程序
+Retira la aplicación de esta cuenta de Windows. Tus perfiles se conservarán.|从此 Windows 帐户中移除应用。配置文件会保留。
+Aplicación y controlador para Windows 11 x64.|适用于 Windows 11 x64 的应用和驱动程序。
+Desinstalación|卸载
+Incluye|包含
+Se eliminarán StadiaLink y su acceso del menú Inicio.|将删除 StadiaLink 及其“开始”菜单快捷方式。
+Retirar el controlador afecta a todos los usuarios del equipo y requiere permiso de administrador.|移除驱动程序会影响此电脑上的所有用户，并需要管理员权限。
+✓  Detección automática por Bluetooth y USB|✓  自动检测蓝牙和 USB 连接
+✓  Botones, sticks, gatillos y vibración|✓  按键、摇杆、扳机和振动
+✓  Perfiles y acciones de Windows|✓  配置文件和 Windows 操作
+✓  Instalación sin descargas|✓  无需下载即可安装
+Los ajustes Bluetooth de Windows no se modificarán.|不会更改 Windows 蓝牙设置。
+Windows 11 · x64. Windows pedirá permiso de administrador para instalar el controlador y su certificado local.|Windows 11 · x64。安装驱动程序及其本地证书时，Windows 会请求管理员权限。
+Licencia GPLv3|GPLv3 许可证
+Desinstalar|卸载
+Reintentar|重试
+Cerrar|关闭
+Retirando StadiaLink…|正在移除 StadiaLink…
+Retirando el controlador…|正在移除驱动程序…
+Aplicación desinstalada. Tus perfiles se han conservado.|应用已卸载。配置文件已保留。
+Preparando la aplicación…|正在准备应用…
+Instalando el controlador. Acepta el permiso de Windows…|正在安装驱动程序。请接受 Windows 权限提示…
+Creando el acceso del menú Inicio…|正在创建“开始”菜单快捷方式…
+Instalado. Si el mando no aparece, reconéctalo o reinicia Windows.|安装完成。如果未显示手柄，请重新连接或重启 Windows。
+Instalado. Enciende tu Stadia y abre StadiaLink.|安装完成。请开启 Stadia 手柄并打开 StadiaLink。
+Se necesita Windows x64.|需要 Windows x64。
+Se necesita Windows 11.|需要 Windows 11。
+Cierra StadiaLink antes de continuar.|请先关闭 StadiaLink 再继续。
+La aplicación ya no está instalada.|应用已不再安装。
+ · Cargando| · 正在充电
+ · Carga completa| · 已充满
+Sin ajuste adicional|无附加调整
+○ Entrada física   ● Salida configurada|○ 实际输入   ● 配置后的输出
+Iniciar con Windows|随 Windows 启动
+Umbral|阈值
+Inicio con Windows activado|已启用随 Windows 启动
+Inicio con Windows desactivado|已禁用随 Windows 启动
+Entrada|输入
+Salida|输出
+Listo|就绪
+Ajustes|设置
+Vibración continua|持续振动
+Vibración detenida|振动已停止
+Tiempo de respuesta|响应时间
+Tiempos de la aplicación|应用耗时
+Medir durante 6 s|测量 6 秒
+Abrir informe|打开报告
+Midiendo…|正在测量…
+Estándar|标准
+Sin guardar|未保存
+Conectado por|连接方式
+Conecta el mando para medir.|连接手柄以进行测量。
+No hay muestras suficientes.|样本数量不足。
+StadiaLink ya está abierto.|StadiaLink 已在运行。
+Se produjo un error. Detalles en|发生错误。详情见
+Registro:|日志：
+Perfil StadiaLink (*.json)|StadiaLink 配置文件 (*.json)
+No se pudo guardar el inicio con Windows.|无法保存随 Windows 启动设置。
+No se encuentra el paquete de instalación.|找不到安装包。
+El paquete de instalación está dañado.|安装包已损坏。
+Ruta no válida en el instalador.|安装程序中的路径无效。
+Ruta de desinstalación no válida.|卸载路径无效。
+Configuración nativa del mando Stadia|Stadia 手柄原生设置
+Configura tu Stadia en Windows|在 Windows 中设置 Stadia 手柄
+Windows no pudo completar la instalación del controlador. Consulta el registro en|Windows 无法完成驱动程序安装。请查看日志：
+HID query|HID 查询
+Query interval|查询间隔
+Latest query to UI frame|最近一次查询到界面帧的耗时
+Render callbacks/s=|渲染回调/秒=
+HID queries/s=|HID 查询/秒=
+Queries can return cached input. These measurements exclude physical actuation, radio transport, game polling and display latency; they cannot establish end-to-end latency.|查询可能返回缓存的输入。这些测量不包含实体操作、无线传输、游戏轮询和显示延迟，因此不能代表端到端延迟。
+No se pudo completar la operación.|无法完成此操作。
+Rendimiento|性能
+HID query duration|HID 查询耗时
+Query intervals|查询间隔
+: no samples|：无样本
+ (ms): median=|（毫秒）：中位数=
+WPF tier=|WPF 层级=
+Stadia Controller|Stadia 手柄
+Ganancia del juego|游戏振动增益
+Potencia de prueba|测试强度
+Actualiza el controlador para ampliar la vibración.|更新驱动程序以增强振动。
+Prueba enviada.|测试已发送。
+Señal de prueba|测试信号
+Actualizaciones|更新
+Buscar actualizaciones|检查更新
+Buscando actualizaciones…|正在检查更新…
+La aplicación está actualizada.|应用已是最新版本。
+Nueva versión disponible:|发现新版本：
+Actualización disponible|有可用更新
+No se pudieron comprobar las actualizaciones.|无法检查更新。
+Ver descargas en GitHub|在 GitHub 查看下载
+Actualizar StadiaLink|更新 StadiaLink
+Actualiza la aplicación instalada y conserva tus perfiles.|更新已安装的应用并保留配置文件。
+Aplicación y perfiles conservados. El controlador no se modifica.|应用已更新，配置文件已保留。驱动程序未更改。
+Esta actualización requiere el instalador completo.|此更新需要使用完整安装程序。
+Hay una versión más reciente instalada.|已安装较新版本。
+Instalador completo|完整安装程序
+Actualización de la aplicación|应用更新
+Salida de prueba:|测试输出：

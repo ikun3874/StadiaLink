@@ -34,7 +34,20 @@ New-Item -ItemType Directory -Force $obj, $pkg | Out-Null
 $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
 $vs = & $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
 if (-not $vs) { throw 'MSVC build tools not found' }
-cmd /c "`"$vs\VC\Auxiliary\Build\vcvars64.bat`" >nul 2>&1 && set" | ForEach-Object {
+$shortPathType = 'StadiaBuildShortPath' -as [type]
+if (-not $shortPathType) {
+    Add-Type -TypeDefinition @'
+using System.Text;
+using System.Runtime.InteropServices;
+public static class StadiaBuildShortPath {
+    [DllImport("kernel32.dll", CharSet=CharSet.Unicode)]
+    public static extern uint GetShortPathName(string path, StringBuilder shortPath, uint size);
+}
+'@
+}
+$shortBat = New-Object Text.StringBuilder 1024
+if (-not [StadiaBuildShortPath]::GetShortPathName((Join-Path $vs 'VC\Auxiliary\Build\vcvars64.bat'), $shortBat, $shortBat.Capacity)) { throw 'Could not resolve the MSVC environment script path' }
+cmd /c "call $($shortBat.ToString()) >nul 2>&1 && set" | ForEach-Object {
     if ($_ -match '^([^=]+)=(.*)$') { Set-Item "env:$($Matches[1])" $Matches[2] }
 }
 

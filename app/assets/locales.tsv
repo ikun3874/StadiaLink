@@ -43,7 +43,7 @@ Intercambiar sticks izquierdo y derecho|Swap left and right sticks|Inverser les 
 Stick izquierdo|Left stick|Stick gauche|Linker Stick
 Stick derecho|Right stick|Stick droit|Rechter Stick
 La zona muerta elimina movimientos involuntarios cerca del centro.|The deadzone removes unintended movement near the center.|La zone morte supprime les mouvements involontaires près du centre.|Die Totzone verhindert unbeabsichtigte Bewegungen nahe der Mitte.
-Zona muerta|Deadzone|Zone morte|Totzone
+Zona muerta adicional|Additional deadzone|Zone morte supplémentaire|Zusätzliche Totzone
 Sensibilidad|Sensitivity|Sensibilité|Empfindlichkeit
 Invertir eje horizontal|Invert horizontal axis|Inverser l’axe horizontal|Horizontale Achse invertieren
 Invertir eje vertical|Invert vertical axis|Inverser l’axe vertical|Vertikale Achse invertieren
@@ -216,7 +216,7 @@ Cierra StadiaLink antes de continuar.|Close StadiaLink before continuing.|Fermez
 La aplicación ya no está instalada.|The app is no longer installed.|L’application n’est plus installée.|Die App ist nicht mehr installiert.
  · Cargando| · Charging| · En charge| · Wird geladen
  · Carga completa| · Fully charged| · Charge complète| · Vollständig geladen
-Sin zona muerta|No deadzone|Sans zone morte|Ohne Totzone
+Sin ajuste adicional|No additional adjustment|Aucun réglage supplémentaire|Keine zusätzliche Anpassung
 ○ Entrada física   ● Salida configurada|○ Physical input   ● Configured output|○ Entrée physique   ● Sortie configurée|○ Physische Eingabe   ● Konfigurierte Ausgabe
 Iniciar con Windows|Start with Windows|Démarrer avec Windows|Mit Windows starten
 Umbral|Threshold|Seuil|Schwelle

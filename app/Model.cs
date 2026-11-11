@@ -22,15 +22,25 @@ namespace StadiaStudio {
         public double Axis(byte raw,int axis) {
             int dz=axis<2?LeftDeadzone:RightDeadzone;
             int gain=axis<2?LeftSensitivity:RightSensitivity;
-            return AxisValue(raw,dz,gain,(Flags&(1<<axis))!=0);
+            int source=axis<2?0:2;
+            double x,y;StickValues(raw,128,dz,gain,(Flags&(1<<source))!=0,(Flags&(1<<(source+1)))!=0,out x,out y);
+            return axis%2==0?x:y;
         }
         public static double AxisValue(byte raw,int deadzone,int sensitivity,bool invert) {
-            int value=(Math.Max(1,(int)raw)-128)*258;
-            int magnitude=Math.Abs(value),dz=32766*deadzone/100;
-            if(magnitude<=dz)return 0;
-            magnitude=(magnitude-dz)*32766/(32766-dz);
-            magnitude=Math.Min(32766,magnitude*sensitivity/100);
-            return (value<0?-1:1)*(invert?-1:1)*magnitude/32766.0;
+            double x,y;StickValues(raw,128,deadzone,sensitivity,invert,false,out x,out y);return x;
+        }
+        public static void StickValues(byte rawX,byte rawY,int deadzone,int sensitivity,bool invertX,bool invertY,out double x,out double y) {
+            int vx=((Math.Max(1,(int)rawX))-128)*258,vy=((Math.Max(1,(int)rawY))-128)*258;
+            int ax=Math.Abs(vx),ay=Math.Abs(vy),major=Math.Max(ax,ay);
+            int radius=(int)Math.Sqrt((long)ax*ax+(long)ay*ay);
+            int dz=15*258+32766*deadzone*128/12700;
+            if(radius<=dz){x=0;y=0;return;}
+            int maxRadius=(int)((long)radius*32766/major);
+            long numerator=(long)(radius-dz)*maxRadius,denominator=(long)radius*(maxRadius-dz);
+            vx=(int)((long)vx*numerator/denominator);vy=(int)((long)vy*numerator/denominator);
+            vx=Math.Max(-32766,Math.Min(32766,vx*sensitivity/100));vy=Math.Max(-32766,Math.Min(32766,vy*sensitivity/100));
+            if(invertX)vx=-vx;if(invertY)vy=-vy;
+            x=vx/32766.0;y=vy/32766.0;
         }
         public Profile WithMotorGains(int? strong,int? weak){Profile copy=Clone();if(strong.HasValue)copy.StrongScale=strong.Value;if(weak.HasValue)copy.WeakScale=weak.Value;copy.Validate();return copy;}
         public bool SameControls(Profile other){byte[] left=ToReport(),right=other.ToReport();left[8]=left[9]=left[63]=right[8]=right[9]=right[63]=0;return left.SequenceEqual(right);}

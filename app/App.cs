@@ -11,8 +11,8 @@ using System.Reflection;
 [assembly:AssemblyDescription("Native Stadia controller settings")]
 [assembly:AssemblyCompany("StadiaLink")]
 [assembly:AssemblyProduct("StadiaLink")]
-[assembly:AssemblyVersion("1.0.3.0")]
-[assembly:AssemblyFileVersion("1.0.3.0")]
+[assembly:AssemblyVersion("1.3.0.0")]
+[assembly:AssemblyFileVersion("1.3.0.0")]
 
 namespace StadiaStudio {
     public static class Entry {
@@ -111,8 +111,11 @@ namespace StadiaStudio {
         }
         static void SelfTest(string file) {
             Assert(Profile.AxisValue(128,0,200,false)==0,"neutral at high sensitivity");
-            Assert(Profile.AxisValue(136,10,200,false)==0,"deadzone before sensitivity");
-            Assert(Profile.AxisValue(136,0,100,false)>0,"zero deadzone preserves small travel");
+            Assert(Profile.AxisValue(136,10,200,false)==0,"additional deadzone applies before sensitivity");
+            Assert(Profile.AxisValue(113,0,100,false)==0,"zero additional deadzone compensates the measured onset");
+            Assert(Profile.AxisValue(111,0,100,false)<0,"travel resumes after the measured onset");
+            double stickX,stickY;Profile.StickValues(112,128,1,100,false,false,out stickX,out stickY);Assert(stickX==0&&stickY==0,"one-percent additional deadzone extends measured onset");
+            Profile.StickValues(117,117,0,100,false,false,out stickX,out stickY);Assert(stickX<0&&stickY<0,"diagonal travel outside radial threshold is preserved");
             Assert(Profile.AxisValue(150,0,200,false)>Profile.AxisValue(150,0,100,false),"sensitivity affects partial travel");
             Assert(Profile.AxisValue(150,0,50,false)<Profile.AxisValue(150,0,100,false),"lower sensitivity reduces travel");
             Assert(Profile.AxisValue(255,0,200,false)==1&&Profile.AxisValue(0,0,100,false)==-1,"axis endpoints and saturation");
